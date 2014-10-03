@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Easy Node Authentication
 
 Code for the entire scotch.io tutorial series: Complete Guide to Node Authentication
@@ -25,3 +26,7 @@ If you would like to download the code and try it for yourself:
 - [Twitter](http://scotch.io/tutorials/javascript/easy-node-authentication-twitter)
 - [Google](http://scotch.io/tutorials/javascript/easy-node-authentication-google)
 - [Linking All Accounts Together](http://scotch.io/tutorials/javascript/easy-node-authentication-linking-all-accounts-together)
+=======
+petrescue
+=========
+>>>>>>> 2aeec78732182427932236460fde9271f9294f82

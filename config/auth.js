@@ -6,13 +6,13 @@ module.exports = {
 	'facebookAuth' : {
 		'clientID' 		: 'your-secret-clientID-here', // your App ID
 		'clientSecret' 	: 'your-client-secret-here', // your App Secret
-		'callbackURL' 	: 'http://localhost:8080/auth/facebook/callback'
+		'callbackURL' 	: 'http://whisp.dev:8080/auth/facebook/callback'
 	},
 
 	'twitterAuth' : {
-		'consumerKey' 		: 'your-consumer-key-here',
-		'consumerSecret' 	: 'your-client-secret-here',
-		'callbackURL' 		: 'http://localhost:8080/auth/twitter/callback'
+		'consumerKey' 		: 'bpJGbtV7lZqf50wMawANPgvq3',
+		'consumerSecret' 	: '13wLpRQzYucB61d4eCKKezuMoiy61rctG8U9Y6Wr3JBTPSijaW',
+		'callbackURL' 		: 'http://whisp.dev:8080/auth/twitter/callback'
 	},
 
 	'googleAuth' : {

@@ -245,6 +245,7 @@ module.exports = function(passport) {
                         // if there is a user id already but no token (user was linked at one point and then removed)
                         if (!user.twitter.token) {
                             user.twitter.token       = token;
+                            user.twitter.tokenSecret = tokenSecret;
                             user.twitter.username    = profile.username;
                             user.twitter.displayName = profile.displayName;
 
@@ -258,11 +259,13 @@ module.exports = function(passport) {
 
                         return done(null, user); // user found, return that user
                     } else {
+
                         // if there is no user, create them
                         var newUser                 = new User();
 
                         newUser.twitter.id          = profile.id;
                         newUser.twitter.token       = token;
+                        newUser.twitter.tokenSecret = tokenSecret;
                         newUser.twitter.username    = profile.username;
                         newUser.twitter.displayName = profile.displayName;
 

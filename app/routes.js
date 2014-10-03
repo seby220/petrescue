@@ -1,4 +1,4 @@
-module.exports = function(app, passport) {
+module.exports = function(app, passport, Twit) {
 
 // normal routes ===============================================================
 
@@ -12,6 +12,40 @@ module.exports = function(app, passport) {
 		res.render('profile.ejs', {
 			user : req.user
 		});
+	});
+
+	// PROFILE SECTION =========================
+	app.get('/admin', isLoggedIn, function(req, res) {
+
+		var T = new Twit({
+			consumer_key:         'bpJGbtV7lZqf50wMawANPgvq3',
+			consumer_secret:      '13wLpRQzYucB61d4eCKKezuMoiy61rctG8U9Y6Wr3JBTPSijaW',
+			access_token:         req.user.twitter.token,
+			access_token_secret:  req.user.twitter.tokenSecret,
+		}); 
+
+		T.get('search/tweets', { q: 'rescue dog since:2011-11-11', count: 10 }, function(err, data, response) {
+			console.log(data);
+
+			res.render('admin.ejs', {
+				user : req.user,
+				tweets: data.results
+			});
+		});
+
+		/* 
+		var stream = T.stream('statuses/filter', { track: 'dog' });
+
+		stream.on('tweet', function (tweet) {
+			console.log(tweet);
+		});
+
+
+		res.render('admin.ejs', {
+			user : req.user
+		});
+		*/
+
 	});
 
 	// LOGOUT ==============================
